@@ -1,0 +1,5 @@
+const defaultNews=[{id:1,title:'NyroxHub Store-ը բաց է',description:'Բարի գալուստ NyPay խանութ։ Այստեղ կարող ես գտնել NyroxHub-ի կոչումները և քեյսերը։',date:'2026-08-18',category:'Թարմացում',featured:true,image:''},{id:2,title:'Միացիր NyroxHub-ին',description:'Մուտք գործիր mc.nyroxhub.sryze.cc և սկսիր քո Minecraft արկածը։',date:'2026-08-18',category:'Համայնք',featured:false,image:''}];
+function getNews(){return JSON.parse(localStorage.getItem('nyrox-news')||'null')||defaultNews}
+function renderNews(){const n=getNews();document.querySelector('#newsGrid').innerHTML=n.map(x=>`<article class="news-card">${x.image?`<img src="${escapeHtml(x.image)}" alt="${escapeHtml(x.title)}">`:''}<time>${x.date} · ${escapeHtml(x.category)}</time>${x.featured?'<span class="tag"> · FEATURED</span>':''}<h3>${escapeHtml(x.title)}</h3><p>${escapeHtml(x.description)}</p></article>`).join('')}
+function escapeHtml(s=''){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+window.getNews=getNews;window.renderNews=renderNews;

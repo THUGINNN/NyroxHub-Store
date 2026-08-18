@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="hy">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NyroxHub Store — NyPay | Հայկական Minecraft սերվեր</title>
+  <meta name="description" content="NyroxHub Store — NyPay. Գնիր կոչումներ և քեյսեր NyroxHub Minecraft սերվերի համար։ Հայկական Minecraft Անարխիա և MiniGames։">
+  <meta name="keywords" content="NyroxHub, NyroxHub Minecraft, NyroxHub Store, NyPay, Հայկական Minecraft սերվեր, Minecraft Հայաստան, Minecraft Անարխիա, Minecraft MiniGames">
+  <meta property="og:title" content="NyroxHub Store — NyPay"><meta property="og:description" content="NyroxHub-ի պաշտոնական խանութը՝ կոչումներ և քեյսեր։"><meta property="og:type" content="website"><meta property="og:url" content="https://thuginnn.github.io/NyroxHub-Store/">
+  <meta name="twitter:card" content="summary"><meta name="theme-color" content="#070a12">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="ambient"></div>
+<header class="nav"><a class="brand" href="#home"><span class="brand-mark">N</span><span>Nyrox<span>Hub</span><small>NyPay Store</small></span></a><button class="menu" id="menuBtn" aria-label="Մենյու">☰</button><nav id="navLinks"><a href="#home">Գլխավոր</a><a href="#ranks">Կոչումներ</a><a href="#cases">Քեյսեր</a><a href="#news">Նորություններ</a><a href="#discord">Discord</a><a href="#store">NyPay</a></nav><button class="cart-btn" id="cartBtn">🛒 <b id="cartCount">0</b></button></header>
+<main>
+<section id="home" class="hero"><div class="hero-copy"><div class="eyebrow">✦ ՀԱՅԿԱԿԱՆ MINECRAFT NETWORK</div><h1>Քո արկածը<br><span>սկսվում է այստեղ</span></h1><p>Միացիր NyroxHub-ին՝ MiniGames և Անարխիա ռեժիմներով։ Բացահայտիր աշխարհը, հավաքիր ռեսուրսներ և դարձիր լեգենդ։</p><div class="ip"><span>mc.nyroxhub.sryze.cc</span><button id="copyIp">Պատճենել IP</button></div><div class="actions"><a class="btn primary" href="#store">Բացել խանութը →</a><a class="btn ghost" href="https://discord.com/" target="_blank" rel="noopener" id="discord">Discord ↗</a></div><div class="stats"><div><strong>24/7</strong><span>Առցանց աշխարհ</span></div><div><strong>2</strong><span>Խաղային ռեժիմ</span></div><div><strong>NyPay</strong><span>Արագ գնումներ</span></div></div></div><div class="hero-art"><div class="cube"><div>⛏</div></div><div class="floating f1">⚔️</div><div class="floating f2">💎</div><div class="floating f3">🟩</div></div></section>
+<section class="section" id="store"><div class="section-head"><div><span class="eyebrow">NYPAY STORE</span><h2>Ընտրիր քո <span>ուժը</span></h2></div><button class="btn ghost" id="cartOpen">🛒 Զամբյուղ <span id="cartTotalLabel">0 ֏</span></button></div><div class="toolbar"><input id="search" type="search" placeholder="Փնտրել ապրանք…"><div class="filters" id="filters"><button class="active" data-filter="all">Բոլորը</button><button data-filter="rank">Կոչումներ</button><button data-filter="donate">Դոնաթ</button><button data-filter="title">Տիտուլ</button><button data-filter="bicoins">BI-COIN</button></div><select id="sort"><option value="default">Դասավորել</option><option value="low">Գին՝ աճող</option><option value="high">Գին՝ նվազող</option></select></div><div class="products" id="products"></div></section>
+<section class="section news-section" id="news"><div class="section-head"><div><span class="eyebrow">LIVE UPDATES</span><h2>Վերջին <span>նորությունները</span></h2></div><button class="btn ghost" id="adminBtn">⚙ Admin</button></div><div class="news-grid" id="newsGrid"></div></section>
+<section class="cta" id="discord"><div><span class="eyebrow">JOIN THE COMMUNITY</span><h2>Պատրա՞ստ ես խաղալու։</h2><p>Միացիր մեր Discord համայնքին և առաջինը իմացիր թարմացումների մասին։</p></div><a class="btn primary" href="https://discord.com/" target="_blank" rel="noopener">Միանալ Discord-ին ↗</a></section>
+</main>
+<footer><div class="brand"><span class="brand-mark">N</span><span>NyroxHub<small>NyPay Store</small></span></div><p>© 2026 NyroxHub. Բոլոր իրավունքները պաշտպանված են։</p><span>Minecraft-ը Mojang Studios-ի ապրանքանիշն է։</span></footer>
+<div class="modal hidden" id="modal"><div class="modal-box"><button class="close" data-close>×</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div><script src="js/store.js"></script><script src="js/cart.js"></script><script src="js/news.js"></script><script src="js/admin.js"></script><script src="js/app.js"></script>
+</body></html>

@@ -1,0 +1,11 @@
+const PRODUCTS=[
+['hero','Hero',200,'Կոչում՝ սկսելու քո NyroxHub ճանապարհը','🟦'],['rank','Bomj',900,'Ստացիր նոր հնարավորություններ և առանձնացիր խաղում','🟫'],['rank','Stinger',1400,'Հզոր կոչում ակտիվ խաղացողների համար','🟨'],['rank','Enternity',2000,'Հատուկ կարգավիճակ՝ քո պրոֆիլի համար','🟪'],['rank','Legend',3200,'Լեգենդար կարգավիճակ NyroxHub-ում','💎'],['rank','Nyrox',7000,'Ամենաբարձր մակարդակի բացառիկ կոչում','👑'],
+['donate','Դոնաթ Քեյս — 1 հատ',400,'Բացիր մեկ պատահական Դոնաթ քեյս','🎁'],['donate','Դոնաթ Քեյս — 2 հատ',600,'Բացիր երկու Դոնաթ քեյս','🎁'],['donate','Դոնաթ Քեյս — 3 հատ',1000,'Բացիր երեք Դոնաթ քեյս','🎁'],['donate','Դոնաթ Քեյս — 6 հատ',1400,'Բացիր վեց Դոնաթ քեյս','🎁'],['donate','Դոնաթ Քեյս — 10 հատ',2300,'Բացիր տասը Դոնաթ քեյս','🎁'],
+['title','Տիտուլ Քեյս — 1 հատ',200,'Բացիր մեկ Տիտուլ քեյս','🏷️'],['title','Տիտուլ Քեյս — 3 հատ',400,'Բացիր երեք Տիտուլ քեյս','🏷️'],['title','Տիտուլ Քեյս — 6 հատ',700,'Բացիր վեց Տիտուլ քեյս','🏷️'],
+['bicoins','BI-COIN Քեյս — 3 հատ',350,'Բացիր երեք BI-COIN քեյս','🪙'],['bicoins','BI-COIN Քեյս — 4 հատ',650,'Բացիր չորս BI-COIN քեյս','🪙'],['bicoins','BI-COIN Քեյս — 7 հատ',1200,'Բացիր յոթ BI-COIN քեյս','🪙']].map((p,i)=>({id:i+1,category:p[0],name:p[1],price:p[2],description:p[3],icon:p[4]}));
+let state={filter:'all',query:'',sort:'default'};
+function money(n){return n.toLocaleString('hy-AM')+' ֏'}
+function renderProducts(){let list=PRODUCTS.filter(p=>(state.filter==='all'||p.category===state.filter)&&p.name.toLowerCase().includes(state.query.toLowerCase()));if(state.sort==='low')list.sort((a,b)=>a.price-b.price);if(state.sort==='high')list.sort((a,b)=>b.price-a.price);const el=document.querySelector('#products');el.innerHTML=list.length?list.map(p=>`<article class="product"><div class="icon">${p.icon}</div><span class="tag">${label(p.category)}</span><h3>${p.name}</h3><p>${p.description}</p><div class="price">${money(p.price)}</div><button class="btn primary buy" onclick="openProduct(${p.id})">ԳՆԵԼ ՀԻՄԱ</button></article>`).join(''):'<div class="empty">Ապրանք չի գտնվել։ Փորձիր այլ որոնում։</div>'}
+function label(c){return ({rank:'Կոչում',hero:'Կոչում',donate:'Դոնաթ քեյս',title:'Տիտուլ քեյս',bicoins:'BI-COIN քեյս'})[c]||c}
+function openProduct(id){const p=PRODUCTS.find(x=>x.id===id);window.addToCart(p,1);window.openCart()}
+window.PRODUCTS=PRODUCTS;window.renderProducts=renderProducts;
